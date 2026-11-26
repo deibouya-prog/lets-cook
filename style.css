@@ -574,3 +574,117 @@ footer p {
     }
 
 }
+
+/* ==================================
+   MEET THE CHEF — LET'S COOK
+================================== */
+
+.chef-section {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #080808,
+        #17130d,
+        #080808
+    );
+    gap: 90px;
+}
+
+.chef-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.35);
+}
+
+.chef-image img {
+    width: 100%;
+    max-width: none;
+    height: 650px;
+    object-fit: cover;
+    object-position: center 30%;
+    border: none;
+    transition: transform 0.8s ease;
+}
+
+.chef-image:hover img {
+    transform: scale(1.04);
+}
+
+.chef-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.95)
+    );
+}
+
+.chef-label span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.chef-label h3 {
+    font-size: 38px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.chef-section .chef-quote {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-style: italic;
+    padding-left: 22px;
+    border-left: 2px solid var(--gold);
+    margin: 30px 0;
+}
+
+.chef-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.chef-values span {
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 8px 18px;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+
+    .chef-section {
+        gap: 40px;
+    }
+
+    .chef-image img {
+        height: 520px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .chef-image img {
+        height: 440px;
+    }
+
+    .chef-label {
+        padding: 25px;
+    }
+
+    .chef-label h3 {
+        font-size: 30px;
+    }
+
+}
