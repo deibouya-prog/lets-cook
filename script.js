@@ -190,3 +190,75 @@ document.getElementById("year").textContent =
     }, { passive: true });
 
 })();
+
+// ========================================
+// LET'S COOK — MENU CATEGORY FILTERING
+// ========================================
+
+(() => {
+
+    const filters = document.querySelectorAll(".menu-filter");
+
+    const products = document.querySelectorAll(
+        ".menu-product-card"
+    );
+
+    const emptyMessage = document.getElementById("menuEmpty");
+
+    // Only activate on the menu page
+
+    if (!filters.length || !products.length) return;
+
+    filters.forEach(filter => {
+
+        filter.addEventListener("click", () => {
+
+            const selectedCategory = filter.dataset.filter;
+
+            // Update active category
+
+            filters.forEach(button => {
+
+                button.classList.remove("active");
+
+                button.setAttribute("aria-pressed", "false");
+
+            });
+
+            filter.classList.add("active");
+
+            filter.setAttribute("aria-pressed", "true");
+
+            let visibleProducts = 0;
+
+            // Filter food products
+
+            products.forEach(product => {
+
+                const matches =
+                    selectedCategory === "all" ||
+                    product.dataset.category === selectedCategory;
+
+                product.hidden = !matches;
+
+                if (matches) {
+
+                    visibleProducts++;
+
+                }
+
+            });
+
+            // Display message for empty categories
+
+            if (emptyMessage) {
+
+                emptyMessage.hidden = visibleProducts !== 0;
+
+            }
+
+        });
+
+    });
+
+})();
