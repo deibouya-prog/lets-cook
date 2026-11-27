@@ -1231,9 +1231,31 @@ footer p {
    PRIVATE CHEF & ONLINE ORDERING
 ================================== */
 
+
 .culinary-services {
+    position: relative;
     padding: 110px 6%;
-    background: #080808;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.75)
+        ),
+        url("assets/culinary-background.jpg")
+        center / cover no-repeat;
+
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(212,175,55,0.2);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+@media (max-width: 768px) {
+
+    .culinary-services {
+        background-attachment: scroll;
+    }
+
 }
 
 .services-heading {
