@@ -1423,7 +1423,7 @@ footer p {
             rgba(0,0,0,0.55) 50%,
             rgba(0,0,0,0.18) 100%
         ),
-        url("assets/81786.jpg")
+        url("assets/menu-hero.jpg")
         center / cover no-repeat;
     border-bottom: 1px solid rgba(212,175,55,0.25);
 }
@@ -1696,7 +1696,7 @@ footer p {
                 rgba(0,0,0,0.55),
                 rgba(0,0,0,0.85)
             ),
-            url("assets/81786.jpg")
+            url("assets/menu-hero.jpg")
             center / cover no-repeat;
     }
 
