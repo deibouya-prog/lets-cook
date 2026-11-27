@@ -1226,3 +1226,157 @@ footer p {
     }
 
 }
+
+/* ==================================
+   PRIVATE CHEF & ONLINE ORDERING
+================================== */
+
+.culinary-services {
+    padding: 110px 6%;
+    background: #080808;
+}
+
+.services-heading {
+    max-width: 800px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.services-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(35px, 4.5vw, 65px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+.services-heading h2 em {
+    color: var(--gold);
+}
+
+.services-heading p {
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.culinary-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.culinary-service-card {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(212,175,55,0.25);
+    background: #111111;
+    transition: border-color 0.4s ease;
+}
+
+.culinary-service-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    z-index: -2;
+    transition: transform 0.8s ease;
+}
+
+.culinary-service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.98) 0%,
+        rgba(0,0,0,0.8) 30%,
+        rgba(0,0,0,0.15) 75%
+    );
+    z-index: -1;
+}
+
+.culinary-service-card:hover {
+    border-color: var(--gold);
+}
+
+.culinary-service-card:hover img {
+    transform: scale(1.06);
+}
+
+.culinary-service-content {
+    width: 100%;
+    padding: 40px;
+}
+
+.service-number {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.culinary-service-content h3 {
+    font-family: "Playfair Display", serif;
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.culinary-service-content p {
+    max-width: 440px;
+    color: #dddddd;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+
+    .culinary-services {
+        padding: 75px 6%;
+    }
+
+    .culinary-services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .culinary-service-card {
+        min-height: 500px;
+    }
+
+    .culinary-service-content {
+        padding: 30px;
+    }
+
+    .service-number {
+        letter-spacing: 2px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .culinary-service-card,
+    .culinary-service-card img {
+        transition: none;
+    }
+
+    .culinary-service-card:hover img {
+        transform: none;
+    }
+
+}
